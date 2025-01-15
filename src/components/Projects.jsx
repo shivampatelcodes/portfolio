@@ -12,11 +12,19 @@ const projects = [
     title: "Blog App",
     description:
       "A MERN stack blog application with user authentication and CRUD features.",
-    details:
-      "This app includes user authentication, a dashboard to manage blogs, and a clean UI. Users can create, edit, delete, and view blogs. Built with MongoDB, Express.js, React.js, and Node.js.",
+    details: `
+      <ul>
+        <li><strong>User Registration and Login:</strong> Secure authentication using JWT. Passwords hashed with bcrypt for enhanced security.</li>
+        <li><strong>Profile Management:</strong> Users can upload profile images to Cloudinary during sign-up. An endpoint for retrieving a user's profile and updating it if needed.</li>
+        <li><strong>Post Creation and Management:</strong> Create, read, update, and delete (CRUD) posts. Image uploads for posts are handled via Cloudinary.</li>
+        <li><strong>Following System:</strong> Users can follow and unfollow others. Retrieve posts from followed users to personalize the feed. Remove followers if needed.</li>
+        <li><strong>Search Functionality:</strong> Search for specific users by their username. Retrieve user details and their associated posts.</li>
+        <li><strong>Token-Based Authorization:</strong> Protects routes, ensuring only authenticated users can access or modify specific resources.</li>
+      </ul>
+    `,
     image: BlogAppImage,
-    link: "https://github.com/shivampatelcodes/blog-app",
-    github: "https://github.com/shivampatelcodes/blog-app",
+    link: "https://blogapp-prodfrontend.vercel.app/",
+    github: "https://github.com/shivuptl06/blogapp-prod",
   },
   {
     title: "E-commerce Product Catalog",
@@ -24,8 +32,8 @@ const projects = [
     details:
       "This project showcases a responsive e-commerce interface, allowing users to browse products, view details, and filter items. Data is managed through an Express.js backend and MongoDB database.",
     image: EcommerceAppImage,
-    link: "https://github.com/shivampatelcodes/ecommerce-app",
-    github: "https://github.com/shivampatelcodes/ecommerce-app",
+    link: "https://shivampatel1.vercel.app/",
+    github: "https://github.com/shivuptl06/ecommerce",
   },
   {
     title: "Online Music Player",
@@ -33,8 +41,8 @@ const projects = [
     details:
       "Users can search for songs, view artist details, and create playlists. The app provides seamless playback and a user-friendly interface. Built using React and integrated with the Deezer API.",
     image: MusicPlayerAppImage,
-    link: "https://github.com/shivampatelcodes/music-player",
-    github: "https://github.com/shivampatelcodes/music-player",
+    link: "https://online-music-preview.netlify.app/",
+    github: "#",
   },
   {
     title: "Weather Dashboard Application",
@@ -42,8 +50,8 @@ const projects = [
     details:
       "The app provides detailed weather forecasts for multiple locations, including temperature, humidity, and wind speed. Developed with React and OpenWeather API.",
     image: WeatherAppImage,
-    link: "https://github.com/shivampatelcodes/weather-dashboard",
-    github: "https://github.com/shivampatelcodes/weather-dashboard",
+    link: "https://weather-finder-web.vercel.app/",
+    github: "https://github.com/shivuptl06/weather-app-v2",
   },
   {
     title: "Invoice Management App",
@@ -51,8 +59,8 @@ const projects = [
     details:
       "This application allows users to create, edit, and manage invoices efficiently. It includes features like invoice history, PDF generation, and search functionality. Built with C# and Windows Forms.",
     image: InvoiceApp,
-    link: "https://github.com/shivampatelcodes/invoice-app",
-    github: "https://github.com/shivampatelcodes/invoice-app",
+    link: "https://github.com/shivuptl06/InvoiceTraker  ",
+    github: "https://github.com/shivuptl06/InvoiceTraker",
   },
 ];
 
