@@ -7,7 +7,7 @@ import EcommerceAppImage from "../assets/EcommerceApp.png";
 import MusicPlayerAppImage from "../assets/MusicPlayerApp.png";
 import WeatherAppImage from "../assets/WeatherApp.png";
 import InvoiceApp from "../assets/CSharp.png";
-import EasyRide from '../assets/Easyride.png';
+import EasyRide from "../assets/Easyride.png";
 
 const projects = [
   {
@@ -24,7 +24,7 @@ const projects = [
       </ul>
     `,
     image: EasyRide,
-    link: "https://easyride-lime.vercel.app/dashboard", 
+    link: "https://easyride-lime.vercel.app/dashboard",
     github: "https://github.com/shivampatelcodes/easyride",
   },
   {
