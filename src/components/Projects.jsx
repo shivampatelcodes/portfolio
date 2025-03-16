@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useState } from "react";
 import "animate.css";
 import { LazyLoadComponent } from "react-lazy-load-image-component";
@@ -6,8 +7,26 @@ import EcommerceAppImage from "../assets/EcommerceApp.png";
 import MusicPlayerAppImage from "../assets/MusicPlayerApp.png";
 import WeatherAppImage from "../assets/WeatherApp.png";
 import InvoiceApp from "../assets/CSharp.png";
+import EasyRide from '../assets/Easyride.png';
 
 const projects = [
+  {
+    title: "EasyRide",
+    description:
+      "A ride-sharing platform connecting passengers and drivers using React and Firebase.",
+    details: `
+      <ul>
+        <li><strong>User Authentication:</strong> Secure sign-up and login using Firebase Authentication.</li>
+        <li><strong>Role-Based Access:</strong> Drivers post trips and manage bookings while passengers search and book rides.</li>
+        <li><strong>Profile Management:</strong> Users update profile information to access key features.</li>
+        <li><strong>Ride and Booking Management:</strong> Post, search, and book rides with real-time Firestore updates.</li>
+        <li><strong>Responsive Design:</strong> Mobile-first design built using Tailwind CSS.</li>
+      </ul>
+    `,
+    image: EasyRide,
+    link: "https://easyride-lime.vercel.app/dashboard", 
+    github: "https://github.com/shivampatelcodes/easyride",
+  },
   {
     title: "Blog App",
     description:
@@ -24,7 +43,7 @@ const projects = [
     `,
     image: BlogAppImage,
     link: "https://blogapp-prodfrontend.vercel.app/",
-    github: "https://github.com/shivuptl06/blogapp-prod",
+    github: "https://github.com/shivampatelcodes/blogapp-prod",
   },
   {
     title: "E-commerce Product Catalog",
@@ -33,7 +52,7 @@ const projects = [
       "This project showcases a responsive e-commerce interface, allowing users to browse products, view details, and filter items. Data is managed through an Express.js backend and MongoDB database.",
     image: EcommerceAppImage,
     link: "https://shivampatel1.vercel.app/",
-    github: "https://github.com/shivuptl06/ecommerce",
+    github: "https://github.com/shivampatelcodes/ecommerce",
   },
   {
     title: "Online Music Player",
@@ -51,7 +70,7 @@ const projects = [
       "The app provides detailed weather forecasts for multiple locations, including temperature, humidity, and wind speed. Developed with React and OpenWeather API.",
     image: WeatherAppImage,
     link: "https://weather-finder-web.vercel.app/",
-    github: "https://github.com/shivuptl06/weather-app-v2",
+    github: "https://github.com/shivampatelcodes/weather-app-v2",
   },
   {
     title: "Invoice Management App",
@@ -59,8 +78,8 @@ const projects = [
     details:
       "This application allows users to create, edit, and manage invoices efficiently. It includes features like invoice history, PDF generation, and search functionality. Built with C# and Windows Forms.",
     image: InvoiceApp,
-    link: "https://github.com/shivuptl06/InvoiceTraker  ",
-    github: "https://github.com/shivuptl06/InvoiceTraker",
+    link: "https://github.com/shivampatelcodes/InvoiceTraker",
+    github: "https://github.com/shivampatelcodes/InvoiceTraker",
   },
 ];
 
