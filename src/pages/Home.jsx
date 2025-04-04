@@ -11,7 +11,6 @@ import Hero from "../components/Hero";
 const About = lazy(() => import("../components/About"));
 const Skills = lazy(() => import("../components/Skills"));
 const Projects = lazy(() => import("../components/Projects"));
-const BlogPreview = lazy(() => import("../components/BlogPreview"));
 const Contact = lazy(() => import("../components/Contact"));
 const Footer = lazy(() => import("../components/Footer"));
 
@@ -34,9 +33,6 @@ const Home = () => {
       </Suspense>
       <Suspense fallback={<LoadingSpinner />}>
         <Projects />
-      </Suspense>
-      <Suspense fallback={<LoadingSpinner />}>
-        <BlogPreview />
       </Suspense>
       <Suspense fallback={<LoadingSpinner />}>
         <Contact />

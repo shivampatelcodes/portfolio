@@ -45,7 +45,7 @@ const Footer = () => {
           <div>
             <h3 className="text-white font-bold mb-4">Quick Links</h3>
             <ul className="space-y-2">
-              {["home", "projects", "skills", "about", "blog", "contact"].map(
+              {["home", "projects", "skills", "about", "contact"].map(
                 (item) => (
                   <li key={item}>
                     <Link
@@ -67,8 +67,8 @@ const Footer = () => {
           <div>
             <h3 className="text-white font-bold mb-4">Get In Touch</h3>
             <p className="mb-4">
-              Feel free to reach out for collaborations or opportunities. I&apos;m
-              always open to discussing new projects.
+              Feel free to reach out for collaborations or opportunities.
+              I&apos;m always open to discussing new projects.
             </p>
             <a
               href="mailto:shivampatelcodes@gmail.com"
