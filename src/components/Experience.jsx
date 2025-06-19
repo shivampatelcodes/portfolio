@@ -38,19 +38,19 @@ const ExperienceCard = ({ experience, index }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="relative bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-xl p-6 hover:border-cyan-500/50 transition-all duration-300"
+      className="relative bg-gray-900/70 backdrop-blur-sm border border-gray-700 rounded-xl p-6 hover:border-yellow-400/50 transition-all duration-300"
     >
       {/* Timeline dot */}
-      <div className="absolute -left-3 top-8 w-6 h-6 bg-cyan-500 rounded-full border-4 border-slate-900"></div>
+      <div className="absolute -left-3 top-8 w-6 h-6 bg-yellow-400 rounded-full border-4 border-black"></div>
 
       <div className="mb-4">
         <h3 className="text-xl font-bold text-white mb-1">
           {experience.position}
         </h3>
-        <h4 className="text-lg font-semibold text-cyan-400 mb-1">
+        <h4 className="text-lg font-semibold text-yellow-400 mb-1">
           {experience.company}
         </h4>
-        <div className="flex flex-col sm:flex-row sm:items-center gap-2 text-gray-400 text-sm">
+        <div className="flex flex-col sm:flex-row sm:items-center gap-2 text-gray-300 text-sm">
           <span className="flex items-center">
             <svg
               className="w-4 h-4 mr-1"
@@ -86,8 +86,8 @@ const ExperienceCard = ({ experience, index }) => {
       <div className="mb-6">
         <ul className="space-y-2">
           {experience.description.map((point, idx) => (
-            <li key={idx} className="text-gray-300 flex items-start">
-              <span className="text-cyan-400 mr-2 mt-1.5 text-xs">▸</span>
+            <li key={idx} className="text-gray-200 flex items-start">
+              <span className="text-yellow-400 mr-2 mt-1.5 text-xs">▸</span>
               <span className="leading-relaxed">{point}</span>
             </li>
           ))}
@@ -98,7 +98,7 @@ const ExperienceCard = ({ experience, index }) => {
         {experience.technologies.map((tech, idx) => (
           <span
             key={idx}
-            className="px-3 py-1 bg-slate-700/50 text-cyan-400 text-xs rounded-full border border-slate-600"
+            className="px-3 py-1 bg-gray-800/70 text-yellow-400 text-xs rounded-full border border-gray-600"
           >
             {tech}
           </span>
@@ -110,11 +110,24 @@ const ExperienceCard = ({ experience, index }) => {
 
 const Experience = () => {
   return (
-    <section
-      id="experience"
-      className="py-20 bg-gradient-to-b from-slate-800 to-slate-900"
-    >
-      <div className="container mx-auto px-6">
+    <section id="experience" className="py-20 bg-black relative">
+      {/* Subtle star background */}
+      <div className="absolute inset-0">
+        <div
+          className="absolute top-1/4 left-1/5 w-1 h-1 bg-white rounded-full animate-pulse"
+          style={{ animationDelay: "1s" }}
+        ></div>
+        <div
+          className="absolute top-3/4 right-1/4 w-0.5 h-0.5 bg-yellow-300 rounded-full animate-pulse"
+          style={{ animationDelay: "3s" }}
+        ></div>
+        <div
+          className="absolute bottom-1/3 left-3/4 w-1 h-1 bg-blue-200 rounded-full animate-pulse"
+          style={{ animationDelay: "2s" }}
+        ></div>
+      </div>
+
+      <div className="container mx-auto px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -123,11 +136,11 @@ const Experience = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-yellow-400 to-white bg-clip-text text-transparent">
               Work Experience
             </span>
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
+          <p className="text-gray-300 max-w-2xl mx-auto">
             My professional journey in web development, showcasing the skills
             and experience I&apos;ve gained along the way.
           </p>
@@ -135,7 +148,7 @@ const Experience = () => {
 
         <div className="relative max-w-4xl mx-auto">
           {/* Timeline line */}
-          <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-cyan-500 to-blue-500"></div>
+          <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-yellow-400 to-white"></div>
 
           <div className="space-y-8 ml-9">
             {experiences.map((experience, index) => (
@@ -150,7 +163,7 @@ const Experience = () => {
       </div>
     </section>
   );
-}
+};
 ExperienceCard.propTypes = {
   experience: PropTypes.shape({
     id: PropTypes.number.isRequired,
@@ -165,4 +178,3 @@ ExperienceCard.propTypes = {
 };
 
 export default Experience;
-

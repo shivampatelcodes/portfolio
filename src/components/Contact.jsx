@@ -68,11 +68,28 @@ const Contact = () => {
   };
 
   return (
-    <section
-      id="contact"
-      className="py-20 bg-gradient-to-b from-slate-800 to-slate-900"
-    >
-      <div className="container mx-auto px-6">
+    <section id="contact" className="py-20 bg-black relative">
+      {/* Subtle star background */}
+      <div className="absolute inset-0">
+        <div
+          className="absolute top-1/5 left-1/8 w-1 h-1 bg-white rounded-full animate-pulse"
+          style={{ animationDelay: "2s" }}
+        ></div>
+        <div
+          className="absolute bottom-1/4 right-1/5 w-0.5 h-0.5 bg-yellow-300 rounded-full animate-pulse"
+          style={{ animationDelay: "4s" }}
+        ></div>
+        <div
+          className="absolute top-3/5 left-3/4 w-1 h-1 bg-blue-200 rounded-full animate-pulse"
+          style={{ animationDelay: "1s" }}
+        ></div>
+        <div
+          className="absolute top-1/8 right-1/3 w-0.5 h-0.5 bg-white rounded-full animate-pulse"
+          style={{ animationDelay: "3s" }}
+        ></div>
+      </div>
+
+      <div className="container mx-auto px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -81,11 +98,11 @@ const Contact = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-yellow-400 to-white bg-clip-text text-transparent">
               Get In Touch
             </span>
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
+          <p className="text-gray-300 max-w-2xl mx-auto">
             Feel free to reach out for collaborations or opportunities. I&apos;m
             always open to discussing new projects, ideas, or opportunities.
           </p>
@@ -99,29 +116,29 @@ const Contact = () => {
             transition={{ duration: 0.8 }}
             className="lg:w-1/2"
           >
-            <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 border border-slate-700 h-full">
+            <div className="bg-gray-900/70 backdrop-blur-sm rounded-2xl p-8 border border-gray-700 h-full">
               <h3 className="text-2xl font-bold mb-6 text-white">
                 Contact Information
               </h3>
 
               <div className="space-y-6">
                 <div>
-                  <h4 className="text-cyan-400 mb-2 font-medium">Email</h4>
+                  <h4 className="text-yellow-400 mb-2 font-medium">Email</h4>
                   <a
                     href="mailto:shivampatelcodes@gmail.com"
-                    className="text-gray-300 hover:text-white transition-colors"
+                    className="text-gray-200 hover:text-white transition-colors"
                   >
                     shivampatelcodes@gmail.com
                   </a>
                 </div>
 
                 <div>
-                  <h4 className="text-cyan-400 mb-2 font-medium">Location</h4>
-                  <p className="text-gray-300">Kitchener, Ontario, Canada</p>
+                  <h4 className="text-yellow-400 mb-2 font-medium">Location</h4>
+                  <p className="text-gray-200">Kitchener, Ontario, Canada</p>
                 </div>
 
                 <div>
-                  <h4 className="text-cyan-400 mb-2 font-medium">
+                  <h4 className="text-yellow-400 mb-2 font-medium">
                     Social Media
                   </h4>
                   <div className="flex space-x-4">
@@ -129,7 +146,7 @@ const Contact = () => {
                       href="https://github.com/shivuptl06"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-gray-400 hover:text-white transition-colors"
+                      className="text-gray-300 hover:text-yellow-400 transition-colors"
                     >
                       <FaGithub size={24} />
                     </a>
@@ -137,7 +154,7 @@ const Contact = () => {
                       href="https://www.linkedin.com/in/shivam-patel-89baa1261/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-gray-400 hover:text-white transition-colors"
+                      className="text-gray-300 hover:text-yellow-400 transition-colors"
                     >
                       <FaLinkedin size={24} />
                     </a>
@@ -156,10 +173,10 @@ const Contact = () => {
           >
             <form
               onSubmit={handleSubmit}
-              className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 border border-slate-700"
+              className="bg-gray-900/70 backdrop-blur-sm rounded-2xl p-8 border border-gray-700"
             >
               <div className="mb-6">
-                <label htmlFor="name" className="block text-gray-300 mb-2">
+                <label htmlFor="name" className="block text-gray-200 mb-2">
                   Name
                 </label>
                 <input
@@ -168,9 +185,9 @@ const Contact = () => {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className={`w-full px-4 py-3 rounded-lg bg-slate-700 text-white border ${
-                    formErrors.name ? "border-red-500" : "border-slate-600"
-                  } focus:outline-none focus:border-cyan-500`}
+                  className={`w-full px-4 py-3 rounded-lg bg-gray-800 text-white border ${
+                    formErrors.name ? "border-red-500" : "border-gray-600"
+                  } focus:outline-none focus:border-yellow-400`}
                   placeholder="Your name"
                 />
                 {formErrors.name && (
@@ -179,7 +196,7 @@ const Contact = () => {
               </div>
 
               <div className="mb-6">
-                <label htmlFor="email" className="block text-gray-300 mb-2">
+                <label htmlFor="email" className="block text-gray-200 mb-2">
                   Email
                 </label>
                 <input
@@ -188,9 +205,9 @@ const Contact = () => {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className={`w-full px-4 py-3 rounded-lg bg-slate-700 text-white border ${
-                    formErrors.email ? "border-red-500" : "border-slate-600"
-                  } focus:outline-none focus:border-cyan-500`}
+                  className={`w-full px-4 py-3 rounded-lg bg-gray-800 text-white border ${
+                    formErrors.email ? "border-red-500" : "border-gray-600"
+                  } focus:outline-none focus:border-yellow-400`}
                   placeholder="Your email"
                 />
                 {formErrors.email && (
@@ -201,7 +218,7 @@ const Contact = () => {
               </div>
 
               <div className="mb-6">
-                <label htmlFor="message" className="block text-gray-300 mb-2">
+                <label htmlFor="message" className="block text-gray-200 mb-2">
                   Message
                 </label>
                 <textarea
@@ -210,9 +227,9 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleChange}
                   rows="5"
-                  className={`w-full px-4 py-3 rounded-lg bg-slate-700 text-white border ${
-                    formErrors.message ? "border-red-500" : "border-slate-600"
-                  } focus:outline-none focus:border-cyan-500`}
+                  className={`w-full px-4 py-3 rounded-lg bg-gray-800 text-white border ${
+                    formErrors.message ? "border-red-500" : "border-gray-600"
+                  } focus:outline-none focus:border-yellow-400`}
                   placeholder="Your message"
                 ></textarea>
                 {formErrors.message && (
@@ -225,10 +242,10 @@ const Contact = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className={`w-full py-3 px-6 rounded-lg text-white font-medium transition-all duration-300 ${
+                className={`w-full py-3 px-6 rounded-lg text-black font-medium transition-all duration-300 ${
                   isSubmitting
-                    ? "bg-slate-600 cursor-not-allowed"
-                    : "bg-gradient-to-r from-cyan-500 to-blue-500 hover:shadow-lg hover:shadow-cyan-500/25"
+                    ? "bg-gray-600 cursor-not-allowed"
+                    : "bg-gradient-to-r from-yellow-400 to-yellow-600 hover:shadow-lg hover:shadow-yellow-400/25"
                 }`}
               >
                 {isSubmitting ? "Sending..." : "Send Message"}

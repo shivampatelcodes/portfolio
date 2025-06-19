@@ -29,13 +29,13 @@ const Navbar = () => {
       animate={{ y: 0 }}
       className={`fixed w-full z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-slate-900/80 backdrop-blur-lg shadow-lg py-3"
+          ? "bg-black/90 backdrop-blur-lg shadow-lg py-3"
           : "bg-transparent py-5"
       }`}
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
         <motion.h1
-          className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent"
+          className="text-2xl font-bold bg-gradient-to-r from-yellow-400 to-white bg-clip-text text-transparent"
           whileHover={{ scale: 1.05 }}
         >
           Shivam Patel
@@ -50,17 +50,17 @@ const Navbar = () => {
               smooth={true}
               offset={-100}
               duration={500}
-              className="relative text-gray-300 hover:text-white cursor-pointer transition-colors group"
+              className="relative text-gray-200 hover:text-yellow-400 cursor-pointer transition-colors group"
             >
               {link.name}
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-cyan-400 transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-400 transition-all duration-300 group-hover:w-full"></span>
             </Link>
           ))}
         </div>
 
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="md:hidden text-gray-300 focus:outline-none"
+          className="md:hidden text-gray-200 focus:outline-none"
         >
           <svg
             className="w-6 h-6"
@@ -93,7 +93,7 @@ const Navbar = () => {
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: "auto" }}
           exit={{ opacity: 0, height: 0 }}
-          className="md:hidden bg-slate-800/90 backdrop-blur-lg"
+          className="md:hidden bg-black/95 backdrop-blur-lg"
         >
           <div className="px-4 py-3 space-y-3">
             {navLinks.map((link) => (
@@ -104,7 +104,7 @@ const Navbar = () => {
                 smooth={true}
                 offset={-100}
                 duration={500}
-                className="block text-gray-300 hover:text-white py-2"
+                className="block text-gray-200 hover:text-yellow-400 py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {link.name}

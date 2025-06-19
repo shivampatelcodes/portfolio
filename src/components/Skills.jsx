@@ -110,7 +110,7 @@ const skills = [
 const SkillBar = ({ name, logo, proficiency }) => {
   return (
     <motion.div
-      className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-lg p-4 hover:border-cyan-500/50 transition-colors"
+      className="bg-gray-900/70 backdrop-blur-sm border border-gray-700 rounded-lg p-4 hover:border-yellow-400/50 transition-colors"
       whileHover={{ y: -5, transition: { duration: 0.2 } }}
     >
       <div className="flex items-center mb-3">
@@ -125,16 +125,16 @@ const SkillBar = ({ name, logo, proficiency }) => {
         <h3 className="text-lg font-medium text-white">{name}</h3>
       </div>
 
-      <div className="h-2 w-full bg-slate-700 rounded-full overflow-hidden">
+      <div className="h-2 w-full bg-gray-700 rounded-full overflow-hidden">
         <motion.div
-          className="h-full bg-gradient-to-r from-cyan-500 to-blue-500"
+          className="h-full bg-gradient-to-r from-yellow-400 to-yellow-600"
           initial={{ width: 0 }}
           whileInView={{ width: `${proficiency}%` }}
           viewport={{ once: true }}
           transition={{ duration: 1, ease: "easeOut" }}
         />
       </div>
-      <div className="mt-1 text-right text-xs text-gray-400">
+      <div className="mt-1 text-right text-xs text-gray-300">
         {proficiency}%
       </div>
     </motion.div>
@@ -157,7 +157,7 @@ const SkillCategory = ({ category, items }) => {
       transition={{ duration: 0.5 }}
       className="mb-10"
     >
-      <h3 className="text-xl font-bold mb-6 text-cyan-400">{category}</h3>
+      <h3 className="text-xl font-bold mb-6 text-yellow-400">{category}</h3>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {items.map((skill, index) => (
           <SkillBar
@@ -187,11 +187,28 @@ SkillCategory.propTypes = {
 const Skills = () => {
   return (
     <LazyLoadComponent>
-      <section
-        id="skills"
-        className="py-20 bg-gradient-to-b from-slate-900 to-slate-800"
-      >
-        <div className="container mx-auto px-6">
+      <section id="skills" className="py-20 bg-black relative">
+        {/* Subtle star background */}
+        <div className="absolute inset-0">
+          <div
+            className="absolute top-1/6 right-1/5 w-1 h-1 bg-white rounded-full animate-pulse"
+            style={{ animationDelay: "2s" }}
+          ></div>
+          <div
+            className="absolute bottom-1/4 left-1/6 w-0.5 h-0.5 bg-yellow-300 rounded-full animate-pulse"
+            style={{ animationDelay: "4s" }}
+          ></div>
+          <div
+            className="absolute top-2/3 right-2/3 w-1 h-1 bg-blue-200 rounded-full animate-pulse"
+            style={{ animationDelay: "1s" }}
+          ></div>
+          <div
+            className="absolute top-1/8 left-2/3 w-0.5 h-0.5 bg-white rounded-full animate-pulse"
+            style={{ animationDelay: "3s" }}
+          ></div>
+        </div>
+
+        <div className="container mx-auto px-6 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -200,13 +217,13 @@ const Skills = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-yellow-400 to-white bg-clip-text text-transparent">
                 My Skills
               </span>
             </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
+            <p className="text-gray-300 max-w-2xl mx-auto">
               A comprehensive overview of my technical skills and proficiency
-              levels across various technologies and tools.
+              level across various technologies and tools.
             </p>
           </motion.div>
 
